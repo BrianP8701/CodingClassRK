@@ -1,18 +1,23 @@
-package Week3;
+package Week4;
 
 public class LinkedList {
     public static void main(String[] args) {
 
+        Linkedlist myList = new Linkedlist();
+        myList.add("Hello");
+        myList.add(5);
+
+
     }
 }
 
-class Linkedlist{
+class Linkedlist<T>{
     Node head;
     Node tail;
     int size = 0;
 
     // Add number to end of the list
-    public void add(int a){
+    public void add(T a){
         if(size == 0) {
             head = new Node(a, null);
             tail = head;
@@ -38,11 +43,13 @@ class Linkedlist{
     }
 }
 
-class Node {
-    int data;
+class Node<T> {
+    // Attributes
+    T data;
     Node next;
 
-    Node(int data, Node next){
+    // Constructor
+    Node(T data, Node next){
         this.data = data;
         this.next = next;
     }
